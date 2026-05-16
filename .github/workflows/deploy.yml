@@ -26,8 +26,9 @@ jobs:
 
             sudo docker stop backend_container || true
             sudo docker rm backend_container || true
+            sudo docker rmi backend_c -f || true
 
-            sudo docker build -t backend_c .
+            sudo docker build --no-cache -t backend_c .
 
             sudo docker run -d \
               --name backend_container \
