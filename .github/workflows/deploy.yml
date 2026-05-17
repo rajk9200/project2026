@@ -20,8 +20,9 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd project2026
+            cd /home/ubuntu/project2026
 
+            git checkout main
             git pull origin main
 
             sudo docker stop backend_container || true
